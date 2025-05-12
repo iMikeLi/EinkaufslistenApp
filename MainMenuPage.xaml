@@ -8,7 +8,7 @@
 
         <!-- Erster Button (dunkles Rot) -->
         <Frame Grid.Row="0" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
-            <Button Text="📝 Einkaufsliste erstellen"
+            <Button Text="📝 Einkaufsliste"
                     FontSize="20"
                     Clicked="OnCreateShoppingListClicked"
                     CornerRadius="20"
@@ -20,7 +20,7 @@
 
         <!-- Zweiter Button (dunkles Blau) -->
         <Frame Grid.Row="1" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
-            <Button Text="🏬 Supermarkt erstellen"
+            <Button Text="🏬 Supermarkt"
                     FontSize="20"
                     Clicked="OnCreateSupermarketClicked"
                     CornerRadius="20"
