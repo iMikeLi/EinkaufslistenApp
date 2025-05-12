@@ -65,16 +65,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="CreateShoppingListPage.xaml">
+	  <MauiXaml Update="Pages\CreateShoppingListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="CreateSupermarketPage.xaml">
+	  <MauiXaml Update="Pages\CreateSupermarketPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MainMenuPage.xaml">
+	  <MauiXaml Update="Pages\MainMenuPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ShoppingPage.xaml">
+	  <MauiXaml Update="Pages\ShoppingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
