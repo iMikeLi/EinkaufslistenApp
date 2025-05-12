@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EinkaufslistenApp.MainMenuPage"
+             BackgroundColor="White"
+             Title="Hauptmenü">
+
+    <Grid RowDefinitions="3*, 2*, 5*" Padding="20" VerticalOptions="FillAndExpand" RowSpacing="20">
+
+        <!-- Erster Button (dunkles Rot) -->
+        <Frame Grid.Row="0" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
+            <Button Text="📝 Einkaufsliste erstellen"
+                    FontSize="20"
+                    Clicked="OnCreateShoppingListClicked"
+                    CornerRadius="20"
+                    BackgroundColor="#006080"
+                    TextColor="White"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"/>
+        </Frame>
+
+        <!-- Zweiter Button (dunkles Blau) -->
+        <Frame Grid.Row="1" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
+            <Button Text="🏬 Supermarkt erstellen"
+                    FontSize="20"
+                    Clicked="OnCreateSupermarketClicked"
+                    CornerRadius="20"
+                    BackgroundColor="#004060"
+                    TextColor="White"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"/>
+        </Frame>
+
+        <!-- Dritter Button (mittelblau) -->
+        <Frame Grid.Row="2" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
+            <Button Text="🛒 Einkaufen"
+                    FontSize="20"
+                    Clicked="OnShoppingClicked"
+                    CornerRadius="20"
+                    BackgroundColor="#8B1B0E"
+                    TextColor="White"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"/>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>
