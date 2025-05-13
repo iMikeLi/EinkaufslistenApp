@@ -1,12 +1,42 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EinkaufslistenApp.CreateShoppingListPage"
-             Title="CreateShoppingListPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             x:Class="EinkaufslistenApp.CreateShoppingListPage">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Überschrift -->
+        <Label Text="Einkaufslisten" 
+               FontAttributes="Bold" 
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- SCROLLBAR für Listen -->
+        <ScrollView HeightRequest="400">
+            <!-- Hier kannst du die Höhe anpassen -->
+            <CollectionView x:Name="ShoppingListsView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="LightGray" Padding="10" Margin="5">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{Binding Name}" FontSize="18" />
+                                <Label Text="{Binding CreatedAt, StringFormat='Erstellt am {0:dd.MM.yyyy HH:mm:ss}'}" 
+                                       FontSize="14" 
+                                       TextColor="Gray" />
+                                <Button Text="Löschen"
+                                        Clicked="OnDeleteShoppingListClicked"
+                                        CommandParameter="{Binding}" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+        <!-- Button bleibt immer unten -->
+        <Button Text="Neue Einkaufsliste erstellen"
+                Clicked="OnCreateShoppingListClicked"
+                HorizontalOptions="Fill" />
+
     </VerticalStackLayout>
+
 </ContentPage>
