@@ -1,14 +1,62 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:EinkaufslistenApp"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
              x:Class="EinkaufslistenApp.App">
+
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Farben -->
+            <Color x:Key="PrimaryColor">#006080</Color>
+            <!-- Dunkles Türkis für Hauptbuttons -->
+            <Color x:Key="SecondaryColor">#004060</Color>
+            <!-- Dunkles Blau -->
+            <Color x:Key="AccentColor">#8B1B0E</Color>
+            <!-- Mittelblau/Rot für "Einkaufen" -->
+            <Color x:Key="PageBackgroundColor">White</Color>
+            <!-- Hintergrundfarbe der Seiten -->
+            <Color x:Key="ButtonTextColor">White</Color>
+            <!-- Textfarbe auf Buttons -->
+
+            <!-- Standard Stil für ContentPage -->
+            <Style TargetType="ContentPage" x:Key="MainPageStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+                <Setter Property="Padding" Value="20" />
+            </Style>
+
+            <!-- Standard Button Stil -->
+            <Style TargetType="Button" x:Key="MainButtonStyle">
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <!-- Border Stil (mit Schatten) -->
+            <Style TargetType="Border" x:Key="MainBorderStyle">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="StrokeShape">
+                    <Setter.Value>
+                        <shapes:RoundRectangle CornerRadius="20" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Brush="Black"
+                    Opacity="0.4"
+                    Offset="5,5"
+                    Radius="10" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
         </ResourceDictionary>
     </Application.Resources>
+
 </Application>

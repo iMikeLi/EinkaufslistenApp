@@ -1,46 +1,37 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EinkaufslistenApp.MainMenuPage"
-             BackgroundColor="White"
+             Style="{StaticResource MainPageStyle}"
              Title="Hauptmenü">
 
     <Grid RowDefinitions="3*, 2*, 5*" Padding="20" VerticalOptions="FillAndExpand" RowSpacing="20">
 
-        <!-- Erster Button (dunkles Rot) -->
-        <Frame Grid.Row="0" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
+        <!-- Erster Button -->
+        <Border Grid.Row="0"
+                Style="{StaticResource MainBorderStyle}">
             <Button Text="📝 Einkaufsliste"
-                    FontSize="20"
-                    Clicked="OnCreateShoppingListClicked"
-                    CornerRadius="20"
-                    BackgroundColor="#006080"
-                    TextColor="White"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"/>
-        </Frame>
+                    Style="{StaticResource MainButtonStyle}"
+                    BackgroundColor="{StaticResource PrimaryColor}"
+                    Clicked="OnCreateShoppingListClicked" />
+        </Border>
 
-        <!-- Zweiter Button (dunkles Blau) -->
-        <Frame Grid.Row="1" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
+        <!-- Zweiter Button -->
+        <Border Grid.Row="1"
+                Style="{StaticResource MainBorderStyle}">
             <Button Text="🏬 Supermarkt"
-                    FontSize="20"
-                    Clicked="OnCreateSupermarketClicked"
-                    CornerRadius="20"
-                    BackgroundColor="#004060"
-                    TextColor="White"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"/>
-        </Frame>
+                    Style="{StaticResource MainButtonStyle}"
+                    BackgroundColor="{StaticResource SecondaryColor}"
+                    Clicked="OnCreateSupermarketClicked" />
+        </Border>
 
-        <!-- Dritter Button (mittelblau) -->
-        <Frame Grid.Row="2" Padding="0" CornerRadius="20" HasShadow="True" BackgroundColor="Transparent">
+        <!-- Dritter Button -->
+        <Border Grid.Row="2"
+                Style="{StaticResource MainBorderStyle}">
             <Button Text="🛒 Einkaufen"
-                    FontSize="20"
-                    Clicked="OnShoppingClicked"
-                    CornerRadius="20"
-                    BackgroundColor="#8B1B0E"
-                    TextColor="White"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"/>
-        </Frame>
+                    Style="{StaticResource MainButtonStyle}"
+                    BackgroundColor="{StaticResource AccentColor}"
+                    Clicked="OnShoppingClicked" />
+        </Border>
 
     </Grid>
 
