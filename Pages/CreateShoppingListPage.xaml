@@ -1,42 +1,54 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EinkaufslistenApp.CreateShoppingListPage">
+             x:Class="EinkaufslistenApp.CreateShoppingListPage"
+             Style="{StaticResource MainPageStyle}"
+             Title="Einkaufslisten">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20" RowSpacing="20">
 
         <!-- Überschrift -->
-        <Label Text="Einkaufslisten" 
-               FontAttributes="Bold" 
-               FontSize="24"
-               HorizontalOptions="Center" />
+        <Label Text="Einkaufslisten"
+               Grid.Row="0"
+               FontAttributes="Bold"
+               FontSize="26"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource PrimaryColor}" />
 
-        <!-- SCROLLBAR für Listen -->
-        <ScrollView HeightRequest="400">
-            <!-- Hier kannst du die Höhe anpassen -->
-            <CollectionView x:Name="ShoppingListsView">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame BorderColor="LightGray" Padding="10" Margin="5">
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="{Binding Name}" FontSize="18" />
-                                <Label Text="{Binding CreatedAt, StringFormat='Erstellt am {0:dd.MM.yyyy HH:mm:ss}'}" 
-                                       FontSize="14" 
-                                       TextColor="Gray" />
-                                <Button Text="Löschen"
-                                        Clicked="OnDeleteShoppingListClicked"
-                                        CommandParameter="{Binding}" />
-                            </VerticalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </ScrollView>
+        <!-- Scrollbarer Bereich für die Listen -->
+        <CollectionView x:Name="ShoppingListsView"
+                        Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource MainBorderStyle}">
+                        <VerticalStackLayout Spacing="5" Padding="10">
 
-        <!-- Button bleibt immer unten -->
-        <Button Text="Neue Einkaufsliste erstellen"
-                Clicked="OnCreateShoppingListClicked"
-                HorizontalOptions="Fill" />
+                            <Label Text="{Binding Name}"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="Black" />
 
-    </VerticalStackLayout>
+                            <Label Text="{Binding CreatedAt, StringFormat='Erstellt am {0:dd.MM.yyyy HH:mm:ss}'}"
+                                   FontSize="14"
+                                   TextColor="Gray" />
+
+                            <Button Text="❌ Löschen"
+                                    Style="{StaticResource MainButtonStyle}"
+                                    BackgroundColor="Red"
+                                    Clicked="OnDeleteShoppingListClicked"
+                                    CommandParameter="{Binding}" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Button zum Erstellen -->
+        <Button Text="➕ Neue Einkaufsliste erstellen"
+                Grid.Row="2"
+                Style="{StaticResource MainButtonStyle}"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                Clicked="OnCreateShoppingListClicked" />
+
+    </Grid>
 
 </ContentPage>
